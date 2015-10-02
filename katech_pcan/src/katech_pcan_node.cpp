@@ -67,10 +67,10 @@ public:
         Message.ID = 0x400; //ID for Recognition Signal
         Message.LEN = 8;
         Message.MSGTYPE = PCAN_MESSAGE_EXTENDED;
-        Message.DATA[0]=rcg_msg.get()->Pedestrian<4 || rcg_msg.get()->TrafficLight;
-        Message.DATA[1]=rcg_msg.get()->SpeedBump<4 || rcg_msg.get()->LaneDeparture;
-        Message.DATA[2]=(rcg_msg.get()->TrafficSign&0x000F)<4 || rcg_msg.get()->PrecedingCar;
-        Message.DATA[3]=(rcg_msg.get()->TrafficSign&0xff00)>8 || (rcg_msg.get()->TrafficSign&0x00f0)>4;
+        Message.DATA[0]=rcg_msg.get()->Pedestrian<4 | rcg_msg.get()->TrafficLight;
+        Message.DATA[1]=rcg_msg.get()->SpeedBump<4 | rcg_msg.get()->LaneDeparture;
+        Message.DATA[2]=(rcg_msg.get()->TrafficSign&0x000F)<4 | rcg_msg.get()->PrecedingCar;
+        Message.DATA[3]=(rcg_msg.get()->TrafficSign&0xff00)>8 | (rcg_msg.get()->TrafficSign&0x00f0)>4;
 
         if((Status=CAN_Write(PCAN_DEVICE,&Message)) != PCAN_ERROR_OK){
             ROS_ERROR("CAN Error : Error Sending Recognition Signal.");

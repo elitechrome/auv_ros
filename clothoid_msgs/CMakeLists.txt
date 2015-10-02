@@ -11,8 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   katech_KCAN.msg
-  RecognitionStatus.msg
-  VehicleDetectStatus.msg
+  Lane.msg
+  LightStatus.msg
+  TrafficSignRecognitionStatus.msg
+  Pedestrian.msg
 )
 #add_dependencies(NODE_NAME clothoid_msgs_generate_messages_cpp)
 ## Generate added messages and services with any dependencies listed here
