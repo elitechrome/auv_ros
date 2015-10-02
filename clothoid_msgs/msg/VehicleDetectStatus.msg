@@ -1,0 +1,2 @@
+float64 ForwordVehicleSpeed
+float64 CruizeVehicleSpeed

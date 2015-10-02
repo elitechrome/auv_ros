@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="sicktoolbox_wrapper2" name="lms5xx" type="sicklms_5xx" ns="lidar">
+    <param name="ip_add" value="192.168.11.101" />
+    <param name="frame_id" value="laser" />
+  </node>
+  <node pkg="vision_st_driver" name="vision_st_driver" type="vision_st_driver_node"/>
+</launch>
