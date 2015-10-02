@@ -128,7 +128,7 @@ include_directories(
 
 ## Declare a C++ executable
 add_executable(clothoid_main_node src/clothoid_main_node.cpp)
-
+add_dependencies(clothoid_main_node clothoid_msgs_generate_messages_cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 #add_dependencies(clothoid_main_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
