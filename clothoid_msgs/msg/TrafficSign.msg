@@ -9,6 +9,6 @@ int8 SIGN_VEL90 = 90
 int8 SIGN_VEL100 = 100
 int8 SIGN_VEL110 = 110
 
-bool isTrafficSignBumpDetected
-int8 whatTrafficSignVelDetected
+bool TrafficSignBump
+int8 TrafficSignVel
 
