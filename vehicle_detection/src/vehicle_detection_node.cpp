@@ -10,7 +10,7 @@ float vel=0;
 bool tracking_int=false;
 bool tracking_con=false;
 
-class VehicleDetectNode{
+class LaserRoiNode{
 
 public:
 
@@ -24,13 +24,13 @@ private:
    clothoid_msgs::katech_KCAN vehicle_status;
    clothoid_msgs::VehicleDetectStatus plot;
 public:
-   VehicleDetectNode(ros::NodeHandle n) :
+   LaserRoiNode(ros::NodeHandle n) :
    n_(n)
    {
        marker_pub_ = n_.advertise<visualization_msgs::Marker>("visualization_marker", 1);
        plot_pub_ = n_.advertise<clothoid_msgs::VehicleDetectStatus>("recognition_status", 1);
-       laser_sub_ = n_.subscribe<sensor_msgs::LaserScan>("lidar/scan", 1, &VehicleDetectNode::scanCallback,this);
-       carmsg_sub_ = n_.subscribe<clothoid_msgs::katech_KCAN>("vehicle_status" , 1, &VehicleDetectNode::carmsgCallback, this);
+       laser_sub_ = n_.subscribe<sensor_msgs::LaserScan>("lidar/scan", 1, &LaserRoiNode::scanCallback,this);
+       carmsg_sub_ = n_.subscribe<clothoid_msgs::katech_KCAN>("vehicle_status" , 1, &LaserRoiNode::carmsgCallback, this);
    }
 
    void carmsgCallback(const clothoid_msgs::katech_KCANConstPtr& msg_in)
@@ -400,7 +400,7 @@ int main(int argc, char** argv)
 
  ros::init(argc, argv, "vehicle_detection_node");
  ros::NodeHandle n;
- VehicleDetectNode lsp(n);
+ LaserRoiNode lsp(n);
  ROS_INFO("vehicle_detection_node initialized.\n");
  ros::spin();
 

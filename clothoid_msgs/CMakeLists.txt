@@ -13,8 +13,11 @@ add_message_files(
   katech_KCAN.msg
   Lane.msg
   LightStatus.msg
-  TrafficSignRecognitionStatus.msg
+  TrafficSign.msg
   Pedestrian.msg
+  VehicleDetectStatus.msg
+  LaserROI.msg
+  LaserROIArray.msg
 )
 #add_dependencies(NODE_NAME clothoid_msgs_generate_messages_cpp)
 ## Generate added messages and services with any dependencies listed here
