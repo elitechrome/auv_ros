@@ -16,11 +16,8 @@ add_message_files(
   TrafficSign.msg
   Pedestrian.msg
   VehicleDetectStatus.msg
-<<<<<<< HEAD
   LaserROI.msg
   LaserROIArray.msg
-=======
->>>>>>> ff8c4416b2e061decc2ae8a77d7ac7c4759ecbfa
 )
 #add_dependencies(NODE_NAME clothoid_msgs_generate_messages_cpp)
 ## Generate added messages and services with any dependencies listed here
